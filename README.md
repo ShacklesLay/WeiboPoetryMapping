@@ -1,4 +1,4 @@
-# WeiboGDPMapping
+# WeiboPovertyMapping
 This repository contains the code to reproduce the paper [__Predicting Economic Development Using Geolocated Wikipedia Articles__](https://dl.acm.org/citation.cfm?doid=3292500.3330784).
 
 # Preparation
