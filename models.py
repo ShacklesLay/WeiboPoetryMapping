@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
+import config
 
 class NL_model(nn.Module):
     def __init__(self, ) -> None:
@@ -41,7 +42,7 @@ class Multi_model(nn.Module):
             nn.ReLU()
         )
         self.mlp2 = nn.Sequential(
-            nn.Linear(3000,512),
+            nn.Linear(config.candidate_num*config.dim_doc2vec,512),
             nn.ReLU(),
             nn.Linear(512,256),
         )

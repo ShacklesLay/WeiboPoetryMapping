@@ -44,24 +44,24 @@ def train():
     print("Model saved")
 
 if __name__ == "__main__":
-    # train()
-    import numpy as np
-    from sklearn.manifold import TSNE
-    import matplotlib.pyplot as plt
-    # 加载预训练的 Doc2Vec 模型
-    model_path = config.doc2vec_dir
-    model = gensim.models.Doc2Vec.load(model_path)
+    train()
+    # import numpy as np
+    # from sklearn.manifold import TSNE
+    # import matplotlib.pyplot as plt
+    # # 加载预训练的 Doc2Vec 模型
+    # model_path = config.doc2vec_dir
+    # model = gensim.models.Doc2Vec.load(model_path)
     
-    # 获取文本向量
-    vectors = []
-    for i in range(len(model.dv)):
-        vectors.append(model.dv[i])
-    vectors = np.array(vectors)
+    # # 获取文本向量
+    # vectors = []
+    # for i in range(len(model.dv)):
+    #     vectors.append(model.dv[i])
+    # vectors = np.array(vectors)
 
-    # 使用 t-SNE 进行降维
-    tsne = TSNE(n_components=2)
-    vectors_tsne = tsne.fit_transform(vectors)
+    # # 使用 t-SNE 进行降维
+    # tsne = TSNE(n_components=2)
+    # vectors_tsne = tsne.fit_transform(vectors)
 
-    # 可视化
-    plt.scatter(vectors_tsne[:, 0], vectors_tsne[:, 1])
-    plt.savefig('doc2vec_tsne.png')  # 将绘制的图片保存成文件
+    # # 可视化
+    # plt.scatter(vectors_tsne[:, 0], vectors_tsne[:, 1])
+    # plt.savefig('doc2vec_tsne.png')  # 将绘制的图片保存成文件

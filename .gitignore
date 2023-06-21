@@ -1,6 +1,5 @@
 WikipediaPovertyMapping/
 __pycache__/
-data/
 *.png
 results/
 log
