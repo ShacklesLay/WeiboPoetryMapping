@@ -12,8 +12,8 @@ import gensim
 
 def pearson_r2(x,y):
     # 计算标准化后的张量
-    x_norm = (x - x.mean()) / x.std()
-    y_norm = (y - y.mean()) / y.std()
+    x_norm = (x - x.mean()) / (x.std()+1e-5)
+    y_norm = (y - y.mean()) / (y.std()+1e-5)
 
     # 计算皮尔森相关系数
     similarity = F.cosine_similarity(x_norm, y_norm, dim=0)
@@ -67,12 +67,12 @@ def train(train_loader, dev_loader, model, optimizer):
         train_loss = train_epoch(train_loader, model, optimizer)
         r2 = evaluate(dev_loader, model)
         logging.info('Epoch: {}, Train_loss: {}, R2: {}'.format(epoch, train_loss, r2))
-        if r2 > best_r2 and epoch >= 5:
-            torch.save(model.state_dict(),config.Multi_model_dir)
-            logging.info('Model Saved!')
-            logging.info('find the better recall score!')
+        if r2 > best_r2:
+            # torch.save(model.state_dict(),config.Multi_model_dir)
+            # logging.info('Model Saved!')
+            logging.info('find the better r2!')
             best_r2 = r2
-    logging.info('Best recall: {}'.format(best_r2))
+    logging.info('Best r2: {}'.format(best_r2))
     logging.info('Training Finished!')
 
 def run():

@@ -1,13 +1,13 @@
 import torch
-dim_doc2vec = 300
+dim_doc2vec = 50
 
 batch_size = 31
 lr = 0.0001
-epochs = 15
+epochs = 10
 
 candidate_num = 10
 
-ground_truth_type = 'GDP'
+ground_truth_type = 'GDP'   #Choice["Med","Engel","GDP"]
 # device
 device = torch.device('cuda')
 

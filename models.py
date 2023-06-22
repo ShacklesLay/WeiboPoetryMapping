@@ -56,8 +56,7 @@ class Multi_model(nn.Module):
         
     def forward(self, x1, x2):
         # x1.shape=(N,1,255,255)
-        # x2.shape=(N,10,300)
-        # x.shape=(N,1,255,255)
+        # x2.shape=(N,config.candidate_num,config.dim_doc2vec)
         x = self.conv1(x1)
         x = self.conv2(x)
         x = torch.flatten(x,1)

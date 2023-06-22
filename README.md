@@ -16,7 +16,7 @@ All the images collected is in `./data/nightlight_download`.
 Code to collect is in `nightlight_download.py`
 
 ## Ground Truth data
-Our ground truth data consists of per capita GDP, number of hospital beds per 10,000 people, and the Engel coefficient from [Chinese National Bureau of Statistics](https://data.stats.gov.cn/).
+Our ground truth data consists of per capita GDP, number of hospital beds per 10,000 people, and the Engel coefficient from [National Bureau of Statistics of China](https://data.stats.gov.cn/).
 
 All the data collected is in `./data/groundtruth.csv`.
 
